@@ -63,7 +63,7 @@ This project represents one of my first full-stack web development experiences, 
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+&copy; 2025 Vimmerby Diamantverktyg. All Rights Reserved.
 
 ## 👨‍💻 Author
 
