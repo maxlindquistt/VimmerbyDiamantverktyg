@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CustomButton from '../components/CustomButton.astro'
+---
+
+<BaseLayout preloadImage="/img/about-bg-edited2.webp" resetFooter>
+  <section class="about-section">
+    <div class="overlay"></div>
+
+    <div class="about-content">
+      <div class="text-box">
+        <p>
+          Vimmerby Diamantverktyg är ett familjeägt företag med lång erfarenhet av verktyg för rivning och håltagning.
+          Vi säljer högkvalitativa produkter till professionella i byggbranschen – från sågklingor och diamantborrar
+          till
+          större maskiner. Utöver försäljning erbjuder vi även reparation och omsättning av diamantverktyg, så att du
+          kan få ut maximal livslängd av dina verktyg. Hos oss står personlig service och pålitlighet alltid i fokus.
+        </p>
+        <div class="cta">
+          <h3>Kontakta oss idag</h3>
+          <CustomButton text="Kontakta oss" href="/contact" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-image: url('/img/about-bg-edited2.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+
+  .text-box {
+    margin-top: -150px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    color: white;
+  }
+
+  .text-box p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .cta {
+    text-align: center;
+  }
+
+  .cta h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+
+  @media (max-width: 1024px) {
+    .about-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .about-content {
+      max-width: 900px;
+      gap: 2.5rem;
+    }
+
+    .text-box {
+      margin-top: -100px;
+      max-width: 550px;
+    }
+
+    .text-box p {
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+
+    .cta h3 {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Tablet styles */
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 2rem 1rem;
+      min-height: 80vh;
+      background-position: center;
+    }
+
+    .about-content {
+      gap: 2rem;
+      max-width: 100%;
+      justify-content: center;
+    }
+
+    .text-box {
+      margin-top: -50px;
+      max-width: 100%;
+      min-width: auto;
+      width: 100%;
+    }
+
+    .text-box p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 480px) {
+    .about-section {
+      padding: 1.5rem 0.5rem;
+      min-height: 70vh;
+    }
+
+    .about-content {
+      gap: 1.5rem;
+      padding: 0 0.5rem;
+    }
+
+    .text-box {
+      margin-top: -30px;
+      padding: 0;
+    }
+
+    .text-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .cta h3 {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  /* Very small mobile styles */
+  @media (max-width: 320px) {
+    .about-section {
+      padding: 1rem 0.25rem;
+      min-height: 60vh;
+    }
+
+    .about-content {
+      gap: 1rem;
+      padding: 0 0.25rem;
+    }
+
+    .text-box {
+      margin-top: -20px;
+    }
+
+    .text-box p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+  }
+</style>

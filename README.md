@@ -8,20 +8,19 @@ This project represents one of my first full-stack web development experiences, 
 
 ## 🛠️ Technologies Used
 
-### Backend
-- **Node.js** - JavaScript runtime environment
-- **Express.js v5** - Web application framework
-- **EJS** - Embedded JavaScript templating engine
+### Framework & Backend
+- **Astro 7** - Web framework; pages are prerendered to static HTML at build time
+- **@astrojs/node** - Node.js adapter (standalone mode) that serves the site and handles the contact form on demand
+- **Node.js** - JavaScript runtime environment (v22.22 or newer)
 - **Nodemailer** - Email sending functionality for the contact form
 
 ### Frontend
-- **Vanilla JavaScript** - Custom web components
-- **HTML5 & CSS3** - Semantic markup and styling
-- **Web Components API** - Reusable custom elements
+- **Astro components** - Server-rendered, reusable UI components with scoped CSS
+- **HTML5 & CSS3** - Semantic markup and styling, with native cross-document view transitions between pages
+- **Vanilla JavaScript** - Only a small script for the mobile menu
 
 ### Development Tools
-- **Nodemon** - Development server with auto-restart
-- **ESLint** - Code linting with LNU configuration
+- **TypeScript** - Type checking via `astro check`
 - **npm** - Package management
 
 ## 🌟 Features
@@ -45,20 +44,19 @@ This project represents one of my first full-stack web development experiences, 
 ## 📁 Project Structure
 
 ```
-├── public/                # Static assets
-│   ├── css/              # Global stylesheets
-│   ├── img/              # Images
-│   └── js/               # Client-side JavaScript
-│       ├── components/   # Custom web components
-│       └── index.js      # Main client script
+├── public/                    # Static files served as-is
+│   ├── img/                  # Images
+│   └── favicon.ico
 ├── src/
-│   ├── server.js         # Express server setup
-│   ├── controllers/      # Business logic
-│   ├── routes/           # Route definitions
-│   └── views/            # EJS templates
-│       ├── partials/     # Reusable template parts
-│       └── errors/       # Error pages
-└── package.json          # Project dependencies
+│   ├── components/           # Astro components (NavBar, HeroSection, CustomButton, Footer)
+│   ├── layouts/              # Page layout (BaseLayout.astro)
+│   ├── lib/                  # Server-side logic (mailer.ts)
+│   ├── pages/                # File-based routes, including 404.astro
+│   │   └── services/         # /services, /services/diamond, /services/warehouse
+│   └── styles/               # Global stylesheet
+├── astro.config.mjs          # Astro configuration
+├── tsconfig.json             # TypeScript configuration
+└── package.json              # Project dependencies and scripts
 ```
 
 ## 📝 License

@@ -1,0 +1,130 @@
+---
+import CustomButton from './CustomButton.astro'
+---
+
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <div class="left">
+      <h1>Proffsverktyg för betonghåltagning.</h1>
+      <p>Vi säljer proffsprodukter till håltgningsfirmor samt löder om dina diamantkärnborr.</p>
+    </div>
+    <div class="right">
+      <h1>Kontakta oss<br />redan idag</h1>
+      <p><strong>Tel:</strong> 070-2297636<br /><strong>Mail:</strong> christian.linderson@gmail.com</p>
+      <CustomButton text="Kontakta oss" href="/contact" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    background-image: url('/img/home-bg.webp');
+    background-size: cover;
+    background-position: top;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+  }
+
+  .left,
+  .right {
+    max-width: 50%;
+    padding: 20px;
+  }
+
+  .left {
+    margin-top: -150px;
+  }
+
+  .left h1,
+  .right h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .left p {
+    font-size: 1.5rem;
+  }
+
+  .right h1 span {
+    display: block;
+    font-size: 1.8rem;
+  }
+
+  .right p {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .left {
+      margin-top: -100px;
+      margin-left: 0;
+    }
+
+    .left,
+    .right {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .hero-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .left h1,
+    .right h1 {
+      font-size: 2.5rem;
+    }
+
+    .left p,
+    .right p {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .left h1,
+    .right h1 {
+      font-size: 2rem;
+    }
+
+    .left p,
+    .right p {
+      font-size: 1rem;
+    }
+
+    .left {
+      margin-top: 0;
+    }
+  }
+</style>
