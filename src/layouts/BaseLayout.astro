@@ -1,0 +1,44 @@
+---
+import '../styles/global.css'
+import NavBar from '../components/NavBar.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title?: string
+  description?: string
+  /**
+   * The page's main background image (its LCP element). It's referenced from
+   * CSS, so the browser would otherwise only find it after the stylesheet is
+   * parsed. Preloading lets it start downloading together with the HTML.
+   */
+  preloadImage?: string
+  /** Mirror the page's `*` box-model reset on the footer (see Footer.astro). */
+  resetFooter?: boolean
+}
+
+const {
+  title = 'Vimmerby Diamantverktyg',
+  description = 'Vimmerby Diamantverktyg - Proffsprodukter till håltagningsfirmor och reparation av diamantverktyg',
+  preloadImage,
+  resetFooter = false
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} type="image/webp" fetchpriority="high" />}
+  </head>
+  <body>
+    <NavBar />
+    <main>
+      <slot />
+    </main>
+    <Footer reset={resetFooter} />
+  </body>
+</html>

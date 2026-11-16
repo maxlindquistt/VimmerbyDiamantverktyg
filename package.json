@@ -1,26 +1,30 @@
 {
   "name": "vimmerby-diamantverktyg",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Webbplats för Vimmerby Diamantverktyg, byggd med Astro",
   "type": "module",
-  "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.22.0"
+  },
   "scripts": {
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js",
-    "lint": "npx eslint . || exit 0",
-    "lint:fix": "npx eslint . --fix || exit 0"
+    "dev": "astro dev",
+    "build": "astro build",
+    "prestart": "astro build",
+    "start": "node ./dist/server/entry.mjs",
+    "preview": "astro preview",
+    "check": "astro check"
   },
   "keywords": [],
   "author": "Max Lindquist",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "nodemailer": "^7.0.3"
+    "@astrojs/node": "^11.1.13",
+    "astro": "7.4.1",
+    "nodemailer": "^10.6.0"
   },
   "devDependencies": {
-    "@lnu/eslint-config": "^1.1.10",
-    "nodemon": "^3.1.7"
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3"
   }
 }
